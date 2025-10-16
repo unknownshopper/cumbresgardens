@@ -214,6 +214,7 @@ if (openModalBtn && contactModal) {
 }
 
 
+
 // ============ AUDIO DE FONDO ============
 const bgAudio = document.getElementById('bgAudio');
 const audioControl = document.getElementById('audioControl');
@@ -221,40 +222,60 @@ const audioIcon = document.getElementById('audioIcon');
 
 if (bgAudio && audioControl) {
     let isPlaying = false;
+    let userInteracted = false;
     
-    // Intentar reproducir automáticamente
+    // Ajustar volumen
+    bgAudio.volume = 0.3;
+    
+    // Función para reproducir audio
     const playAudio = () => {
-        bgAudio.play()
-            .then(() => {
-                isPlaying = true;
-                audioControl.classList.remove('muted');
-            })
-            .catch((error) => {
-                console.log('Autoplay bloqueado por el navegador:', error);
-                isPlaying = false;
-                audioControl.classList.add('muted');
-            });
+        const playPromise = bgAudio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise
+                .then(() => {
+                    isPlaying = true;
+                    audioControl.classList.remove('muted');
+                    console.log('Audio reproduciendo');
+                })
+                .catch((error) => {
+                    console.log('Autoplay bloqueado:', error.message);
+                    isPlaying = false;
+                    audioControl.classList.add('muted');
+                });
+        }
     };
     
-    // Intentar reproducir al cargar
+    // Intentar reproducir automáticamente
     playAudio();
     
-    // También intentar al primer clic en la página
-    document.addEventListener('click', function initAudio() {
-        if (!isPlaying) {
-            playAudio();
-        }
-        document.removeEventListener('click', initAudio);
-    }, { once: true });
+    // Eventos para iniciar audio en iOS/Brave
+    const startAudioEvents = ['click', 'touchstart', 'touchend', 'scroll'];
     
-    // Control manual del audio
+    const initAudioOnInteraction = () => {
+        if (!userInteracted) {
+            userInteracted = true;
+            playAudio();
+            
+            // Remover listeners después de la primera interacción
+            startAudioEvents.forEach(event => {
+                document.removeEventListener(event, initAudioOnInteraction);
+            });
+        }
+    };
+    
+    // Agregar listeners para múltiples eventos
+    startAudioEvents.forEach(event => {
+        document.addEventListener(event, initAudioOnInteraction, { once: true, passive: true });
+    });
+    
+    // Control manual del audio (botón flotante)
     audioControl.addEventListener('click', (e) => {
         e.stopPropagation();
+        userInteracted = true;
         
         if (bgAudio.paused) {
-            bgAudio.play();
-            isPlaying = true;
-            audioControl.classList.remove('muted');
+            playAudio();
         } else {
             bgAudio.pause();
             isPlaying = false;
@@ -262,6 +283,21 @@ if (bgAudio && audioControl) {
         }
     });
     
-    // Ajustar volumen (opcional, puedes cambiar el valor)
-    bgAudio.volume = 0.3; // 30% del volumen máximo
-}
+    // Manejar cuando el audio se pausa/reproduce
+    bgAudio.addEventListener('play', () => {
+        isPlaying = true;
+        audioControl.classList.remove('muted');
+    });
+    
+    bgAudio.addEventListener('pause', () => {
+        isPlaying = false;
+        audioControl.classList.add('muted');
+    });
+    
+    // Para iOS: intentar reproducir cuando la página se vuelve visible
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && userInteracted && bgAudio.paused) {
+            playAudio();
+        }
+    });
+} 
