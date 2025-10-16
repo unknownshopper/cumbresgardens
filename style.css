@@ -590,3 +590,222 @@ main {
         font-size: 1rem;
     }
 }
+
+/* Sección de Especificaciones y Reserva */
+.room-specs-section {
+    background: #f9f9f9;
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+}
+
+.room-specs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.specs-content h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c5f2d;
+    margin-bottom: 2rem;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spec-item svg {
+    color: #2c5f2d;
+    flex-shrink: 0;
+}
+
+.spec-item span {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.reserve-action {
+    text-align: center;
+}
+
+.reserve-main-btn {
+    display: inline-block;
+    background: #2c5f2d;
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(44, 95, 45, 0.3);
+}
+
+.reserve-main-btn:hover {
+    background: #1f4520;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(44, 95, 45, 0.4);
+}
+
+@media (max-width: 768px) {
+    .room-specs-section {
+        padding: 2rem 1rem;
+    }
+    
+    .specs-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .reserve-main-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+/* Sección de Especificaciones en páginas de habitaciones */
+.room-specs-section {
+    background: #f9f9f9;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+}
+
+.room-specs {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+}
+
+.room-specs h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c5f2d;
+    margin-bottom: 2rem;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spec-item svg {
+    color: #2c5f2d;
+    flex-shrink: 0;
+}
+
+.spec-item span {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.reserve-now-btn {
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background: #2c5f2d;
+    color: white;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(44, 95, 45, 0.3);
+}
+
+.reserve-now-btn:hover {
+    background: #1f4520;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(44, 95, 45, 0.4);
+}
+
+@media (max-width: 768px) {
+    .room-specs-section {
+        padding: 2rem 1rem;
+    }
+    
+    .specs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .spec-item {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .reserve-now-btn {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Sección Descriptiva */
+.about-section {
+    background: linear-gradient(135deg, #2c5f2d 0%, #1f4520 100%);
+    padding: 4rem 2rem;
+    margin-top: 3rem;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
+    }
+}
