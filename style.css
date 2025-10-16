@@ -419,3 +419,174 @@ main {
         padding: 0.4rem 0.8rem;
     }
 }
+/* Sección de Contacto - Botón Principal */
+.contact-main-btn {
+    background: #2c5f2d;
+    color: white;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(44, 95, 45, 0.3);
+    margin-top: 1rem;
+}
+
+.contact-main-btn:hover {
+    background: #1f4520;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(44, 95, 45, 0.4);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+}
+
+.modal.show {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+}
+
+.modal-content h2 {
+    color: #2c5f2d;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.modal-content > p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.modal-rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.modal-room-card {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+}
+
+.modal-room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.modal-room-info {
+    padding: 1.2rem;
+}
+
+.modal-room-info h3 {
+    font-size: 1.3rem;
+    color: #2c5f2d;
+    margin-bottom: 0.3rem;
+}
+
+.modal-room-info p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.modal-reserve-btn {
+    display: inline-block;
+    background: #2c5f2d;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.modal-room-card:hover .modal-reserve-btn {
+    background: #1f4520;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .modal-rooms-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-main-btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}

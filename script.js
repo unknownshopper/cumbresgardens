@@ -174,3 +174,41 @@ document.addEventListener('DOMContentLoaded', () => {
         new ImageSlider(sliderContainer);
     }
 });
+
+
+// ============ MODAL DE CONTACTO ============
+const contactModal = document.getElementById('contactModal');
+const openModalBtn = document.getElementById('openContactModal');
+const closeModalBtn = document.querySelector('.close-modal');
+
+if (openModalBtn && contactModal) {
+    // Abrir modal
+    openModalBtn.addEventListener('click', () => {
+        contactModal.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll
+    });
+    
+    // Cerrar modal con X
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            contactModal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Cerrar modal al hacer clic fuera
+    window.addEventListener('click', (e) => {
+        if (e.target === contactModal) {
+            contactModal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && contactModal.classList.contains('show')) {
+            contactModal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
