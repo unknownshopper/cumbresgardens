@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cumbres Garden - Habitaciones en Cancún</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Video Header -->
+    <div class="video-header">
+        <video autoplay muted loop playsinline class="header-video">
+            <source src="vid/signal-2025-10-15-193923_002.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="header-content">
+            <h1>Cumbres Garden</h1>
+            <p>Tu hogar en Cancún</p>
+        </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Cumbres Garden</div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Habitaciones</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="compacta.html">Compacta</a></li>
+                        <li><a href="familiar.html">Familiar</a></li>
+                        <li><a href="premium1.html">Premium 1</a></li>
+                        <li><a href="premium2.html">Premium 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section class="intro">
+            <h2>Bienvenido a Cumbres Garden</h2>
+            <p>El proyecto habitacional más funcional ubicado en Cancún, Quintana Roo. Ofrece una experiencia única para los amantes de la tranquilidad, la naturaleza y la cultura.</p>
+        </section>
+
+        <section class="rooms-preview">
+            <h2>Nuestras Habitaciones</h2>
+            <div class="rooms-grid">
+                <a href="compacta.html" class="room-card">
+                    <img src="compacta/84df3980-3ee5-41a7-9c01-1cb636624244.avif" alt="Habitación Compacta">
+                    <h3>Compacta</h3>
+                </a>
+                <a href="familiar.html" class="room-card">
+                    <img src="familiar/d405a0b6-6647-44fa-8b63-4da676c9edaf.avif" alt="Habitación Familiar">
+                    <h3>Familiar</h3>
+                </a>
+                <a href="premium1.html" class="room-card">
+                    <img src="premium1/4b6795e8-02c8-4679-969d-f4ec15d3104d.avif" alt="Premium 1">
+                    <h3>Premium 1</h3>
+                </a>
+                <a href="premium2.html" class="room-card">
+                    <img src="premium2/29834025-c183-41af-bd0c-c7c543d76890.avif" alt="Premium 2">
+                    <h3>Premium 2</h3>
+                </a>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <h2>Contacto</h2>
+            <p>¿Interesado en reservar? Contáctanos para más información.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
