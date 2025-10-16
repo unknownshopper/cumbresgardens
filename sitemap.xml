@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Página Principal -->
+    <url>
+        <loc>https://www.cumbresgarden.com/</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/compacta/84df3980-3ee5-41a7-9c01-1cb636624244.avif</image:loc>
+            <image:title>Cumbres Garden Cancún</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Habitación Compacta -->
+    <url>
+        <loc>https://www.cumbresgarden.com/compacta.html</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/compacta/84df3980-3ee5-41a7-9c01-1cb636624244.avif</image:loc>
+            <image:title>Habitación Compacta - 2 Recámaras</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/compacta/21d54373-6834-4829-955f-06d23a74e111.avif</image:loc>
+            <image:title>Habitación Compacta Interior</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Habitación Familiar -->
+    <url>
+        <loc>https://www.cumbresgarden.com/familiar.html</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/familiar/d405a0b6-6647-44fa-8b63-4da676c9edaf.avif</image:loc>
+            <image:title>Habitación Familiar - 3 Recámaras</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/familiar/0ae6d549-3f22-48bb-bfcf-39b539935253.avif</image:loc>
+            <image:title>Habitación Familiar Interior</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Habitación Premium 1 -->
+    <url>
+        <loc>https://www.cumbresgarden.com/premium1.html</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/premium1/4b6795e8-02c8-4679-969d-f4ec15d3104d.avif</image:loc>
+            <image:title>Habitación Premium 1 - 2 Recámaras Lujo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/premium1/9153abb1-f232-4177-9bd8-e6907e885c30.avif</image:loc>
+            <image:title>Habitación Premium 1 Interior</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Habitación Premium 2 -->
+    <url>
+        <loc>https://www.cumbresgarden.com/premium2.html</loc>
+        <lastmod>2025-10-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/premium2/29834025-c183-41af-bd0c-c7c543d76890.avif</image:loc>
+            <image:title>Habitación Premium 2 - 2 Recámaras Lujo</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.cumbresgarden.com/premium2/bdbc9533-f60d-44f4-9243-0058a94f6045.jpeg</image:loc>
+            <image:title>Habitación Premium 2 Interior</image:title>
+        </image:image>
+    </url>
+    
+</urlset>
