@@ -212,3 +212,56 @@ if (openModalBtn && contactModal) {
         }
     });
 }
+
+
+// ============ AUDIO DE FONDO ============
+const bgAudio = document.getElementById('bgAudio');
+const audioControl = document.getElementById('audioControl');
+const audioIcon = document.getElementById('audioIcon');
+
+if (bgAudio && audioControl) {
+    let isPlaying = false;
+    
+    // Intentar reproducir automáticamente
+    const playAudio = () => {
+        bgAudio.play()
+            .then(() => {
+                isPlaying = true;
+                audioControl.classList.remove('muted');
+            })
+            .catch((error) => {
+                console.log('Autoplay bloqueado por el navegador:', error);
+                isPlaying = false;
+                audioControl.classList.add('muted');
+            });
+    };
+    
+    // Intentar reproducir al cargar
+    playAudio();
+    
+    // También intentar al primer clic en la página
+    document.addEventListener('click', function initAudio() {
+        if (!isPlaying) {
+            playAudio();
+        }
+        document.removeEventListener('click', initAudio);
+    }, { once: true });
+    
+    // Control manual del audio
+    audioControl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        
+        if (bgAudio.paused) {
+            bgAudio.play();
+            isPlaying = true;
+            audioControl.classList.remove('muted');
+        } else {
+            bgAudio.pause();
+            isPlaying = false;
+            audioControl.classList.add('muted');
+        }
+    });
+    
+    // Ajustar volumen (opcional, puedes cambiar el valor)
+    bgAudio.volume = 0.3; // 30% del volumen máximo
+}

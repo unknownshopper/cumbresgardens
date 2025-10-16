@@ -809,3 +809,61 @@ main {
         font-size: 1.1rem;
     }
 }
+
+/* Control de Audio Flotante */
+.audio-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: rgba(44, 95, 45, 0.95);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.audio-control:hover {
+    background: rgba(31, 69, 32, 0.95);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.audio-control svg {
+    color: white;
+    width: 28px;
+    height: 28px;
+}
+
+.audio-control.muted svg {
+    opacity: 0.5;
+}
+
+.audio-control.muted::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+    .audio-control {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .audio-control svg {
+        width: 24px;
+        height: 24px;
+    }
+}
