@@ -82,6 +82,9 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2c5f2d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-menu {
@@ -866,4 +869,39 @@ main {
         width: 24px;
         height: 24px;
     }
+}
+
+/* Hero header logo (only on index header-content) */
+.hero-logo {
+    height: 280px;
+    width: auto;
+    display: inline-block;
+    opacity: 0.2;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        height: 100px;
+        opacity: 0.9;
+    }
+}
+
+.logo-img {
+    height: 28px;
+    width: auto;
+    display: inline-block;
+}
+
+.footer {
+    background: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    opacity: 0.95;
 }
