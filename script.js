@@ -33,7 +33,7 @@ class ImageSlider {
     constructor(container) {
         this.container = container;
         this.gallery = container.querySelector('.image-gallery');
-        this.images = container.querySelectorAll('.gallery-image');
+        this.images = this.gallery.querySelectorAll(':scope > .gallery-image');
         this.currentIndex = 0;
         this.totalImages = this.images.length;
         
@@ -53,7 +53,8 @@ class ImageSlider {
         
         // Mostrar primera imagen
         this.updateSlider();
-    }
+        this.startAutoPlay(4000); // 4 segundos
+        }
     
     createControls() {
         // Botón anterior
@@ -99,21 +100,22 @@ class ImageSlider {
     
     addEventListeners() {
         // Botones
-        this.prevBtn.addEventListener('click', () => this.prev());
-        this.nextBtn.addEventListener('click', () => this.next());
+        this.prevBtn.addEventListener('click', () => { this.prev(); this.resetAutoPlay(); });        this.nextBtn.addEventListener('click', () => this.next());
+        this.nextBtn.addEventListener('click', () => { this.next(); this.resetAutoPlay(); });
         
         // Indicadores
         this.indicators.forEach(indicator => {
             indicator.addEventListener('click', (e) => {
                 const index = parseInt(e.target.dataset.index);
                 this.goToSlide(index);
+                this.resetAutoPlay(); // añade esta línea
             });
         });
         
         // Teclado
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.prev();
-            if (e.key === 'ArrowRight') this.next();
+            if (e.key === 'ArrowLeft') { this.prev(); this.resetAutoPlay(); }
+            if (e.key === 'ArrowRight') { this.next(); this.resetAutoPlay(); }
         });
         
         // Touch/Swipe
@@ -127,6 +129,7 @@ class ImageSlider {
         this.container.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             this.handleSwipe();
+            this.resetAutoPlay(); // añade esta línea
         });
         
         const handleSwipe = () => {
@@ -136,6 +139,37 @@ class ImageSlider {
         
         this.handleSwipe = handleSwipe;
     }
+
+        startAutoPlay(interval = 4000) {
+        this.stopAutoPlay(); // evitar timers previos
+        this.autoPlayTimer = setInterval(() => this.next(), interval);
+
+        this._visibilityHandler = () => {
+            if (document.hidden) {
+                this.stopAutoPlay();
+            } else {
+                this.startAutoPlay(interval);
+            }
+        };
+        document.addEventListener('visibilitychange', this._visibilityHandler);
+    }
+
+    stopAutoPlay() {
+        if (this.autoPlayTimer) {
+            clearInterval(this.autoPlayTimer);
+            this.autoPlayTimer = null;
+        }
+        if (this._visibilityHandler) {
+            document.removeEventListener('visibilitychange', this._visibilityHandler);
+            this._visibilityHandler = null;
+        }
+    }
+
+    resetAutoPlay() {
+        this.startAutoPlay(4000);
+    }
+
+
     
     next() {
         this.currentIndex = (this.currentIndex + 1) % this.totalImages;
@@ -167,12 +201,9 @@ class ImageSlider {
     }
 }
 
-// Inicializar slider si existe
+// Inicializar sliders (soporta múltiples)
 document.addEventListener('DOMContentLoaded', () => {
-    const sliderContainer = document.querySelector('.slider-container');
-    if (sliderContainer) {
-        new ImageSlider(sliderContainer);
-    }
+  document.querySelectorAll('.slider-container').forEach(c => new ImageSlider(c));
 });
 
 
