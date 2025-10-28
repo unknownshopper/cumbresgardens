@@ -78,7 +78,7 @@ body {
     align-items: center;
 }
 
-.logo {
+.logo{
     font-size: 1.5rem;
     font-weight: bold;
     color: #2c5f2d;
@@ -871,8 +871,8 @@ main {
     }
 }
 
-/* Hero header logo (only on index header-content) */
-.hero-logo {
+/* Hero header log(only on index header-content) */
+.hero-logo{
     height: 280px;
     width: auto;
     display: inline-block;
@@ -881,9 +881,9 @@ main {
 }
 
 @media (max-width: 768px) {
-    .hero-logo {
+    .hero-logo{
         height: 100px;
-        opacity: 0.9;
+        opacity: 0.2;
     }
 }
 
@@ -900,8 +900,89 @@ main {
     border-top: 1px solid rgba(0,0,0,0.08);
 }
 
-.footer-logo {
+.footer-logo{
     height: 40px;
     width: auto;
     opacity: 0.95;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-left {
+    color: #666;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.footer-center {
+    flex: 0 0 auto;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-bottom {
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.footer-privacy-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-privacy-link:hover {
+    color: #2c5f2d;
+    text-decoration: underline;
+}
+
+.social-link {
+    color: #333;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.social-link:hover {
+    color: #2c5f2d;
+    background: #eaf0eb;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer-left {
+        order: 1;
+    }
+
+    .footer-center {
+        order: 0;
+    }
+
+    .footer-right {
+        order: 2;
+    }
 }

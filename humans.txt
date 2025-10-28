@@ -1,7 +1,7 @@
 /* TEAM */
-Sitio: Cumbres Garden
+Sitio: Cumbres gardens
 Ubicación: Cancún, Quintana Roo, México
-Contacto: info@cumbresgarden.com
+Contacto: info@cumbresgardens.com
 
 /* SITE */
 Última actualización: 2025-10-16

@@ -1,4 +1,4 @@
-# robots.txt para Cumbres Garden - Cancún
+# robots.txt para Cumbres gardens - Cancún
 # Sitio optimizado para SEO
 
 User-agent: *
@@ -25,7 +25,7 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://www.cumbresgarden.com/sitemap.xml
+Sitemap: https://www.cumbresgardens.com/sitemap.xml
 
 # Crawl-delay para bots específicos (opcional)
 User-agent: Googlebot
